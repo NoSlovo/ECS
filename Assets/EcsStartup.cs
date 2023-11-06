@@ -10,7 +10,6 @@ namespace Client
     {
         [SerializeField] private Joystick _joystick;
         
-        
         EcsWorld _world;
         IEcsSystems _systems;
 
@@ -21,6 +20,7 @@ namespace Client
             _systems.ConvertScene()
                .Add(new MovementSystem(_joystick))
                .Add(new RotationSystem(_joystick))
+               .Add(new FollowCameraTargetSystem())
 #if UNITY_EDITOR
                 .Add(new Leopotam.EcsLite.UnityEditor.EcsWorldDebugSystem())
 #endif
