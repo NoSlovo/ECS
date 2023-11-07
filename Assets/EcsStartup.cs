@@ -21,6 +21,7 @@ namespace Client
                .Add(new MovementSystem(_joystick))
                .Add(new RotationSystem(_joystick))
                .Add(new FollowCameraTargetSystem())
+               .Add(new AttackSystem())
 #if UNITY_EDITOR
                 .Add(new Leopotam.EcsLite.UnityEditor.EcsWorldDebugSystem())
 #endif
